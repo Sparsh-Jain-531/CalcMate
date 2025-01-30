@@ -1,9 +1,10 @@
 console.log("Welcome To CalcMate")
 
-let calculation='';
+let calculation=localStorage.getItem("calculation") || "";
 
 const updateCalculation=(value)=>{
     calculation+=value
+    localStorage.setItem('calculation',calculation)
     console.log(calculation)
 }
 
@@ -51,6 +52,7 @@ document.getElementById("btn14").addEventListener("click", ()=>{
 })
 document.getElementById("btn15").addEventListener("click", ()=>{
     calculation = eval(calculation)
+    localStorage.setItem('calculation',calculation)
     console.log(calculation)
 })
 document.getElementById("btn16").addEventListener("click", ()=>{
@@ -58,6 +60,7 @@ document.getElementById("btn16").addEventListener("click", ()=>{
 })
 document.getElementById("btn17").addEventListener("click", ()=>{
     calculation = "";
+    localStorage.setItem('calculation',calculation)
     console.log("Cleared.")
 })
 
